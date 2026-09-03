@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#090014">
+    <title>For My Tisa ❤️ | September 16, 2026</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Animated atmosphere -->
+    <div class="ambient" aria-hidden="true">
+        <div class="aurora aurora-one"></div>
+        <div class="aurora aurora-two"></div>
+        <div class="moon"></div>
+        <div id="stars"></div>
+        <div id="shootingStars"></div>
+        <div class="horizon-glow"></div>
+    </div>
+
+    <!-- Interactive overlays -->
+    <div id="hearts"></div>
+    <div id="sparkles"></div>
+    <div id="cursorGlow"></div>
+
+    <!-- Top controls -->
+    <div class="topbar">
+        <div class="mini-brand">FOR TISA <span>♡</span></div>
+        <button id="musicButton" onclick="musicControl()" aria-label="Toggle music">🎵</button>
+    </div>
+
+    <div class="progress-wrap">
+        <div class="progress-line"><span id="progressFill"></span></div>
+        <span id="progressText">1 / 8</span>
+    </div>
+
+    <!-- Music starts after the first interaction -->
+    <audio id="music" loop preload="auto">
+        <source src="music/song.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- PAGE 1 -->
+    <div class="page active" id="page1">
+        <div class="content hero-content">
+            <div class="eyebrow">A little secret made just for you</div>
+
+            <div class="hero-name">
+                <span class="script">For</span>
+                <span class="name">Tisa</span>
+            </div>
+
+            <div class="heart-orbit" aria-hidden="true">
+                <span>♡</span><span>♥</span><span>♡</span>
+            </div>
+
+            <div class="gift-wrap">
+                <div class="gift-glow"></div>
+                <div class="gift" onclick="openGift()" title="Tap the gift">
+                    <div class="gift-ribbon"></div>
+                    <div class="gift-bow">🎀</div>
+                    🎁
+                </div>
+            </div>
+
+            <h1>Tap the gift</h1>
+            <p class="hero-sub">There's a little piece of my heart waiting inside.</p>
+
+            <div class="scroll-hint">tap to begin <span>↓</span></div>
+        </div>
+    </div>
+
+    <!-- PAGE 2 -->
+    <div class="page" id="page2">
+        <div class="content story-content">
+            <div class="eyebrow">The beginning of something beautiful...</div>
+            <div class="chapter">01</div>
+
+            <h1 class="soft-title">It all began<br><em>March 2026.</em></h1>
+
+            <div class="date-pill">
+                <span class="dot"></span>
+                March 2026
+                <span class="dot"></span>
+            </div>
+
+            <div class="story-card">
+                <div class="story-line"></div>
+                <p id="storyText">
+                   Out of all the days in my life, somehow, that month brought me to you. 
+                   And I never knew how much you would come to mean to me..
+                </p>
+                <div class="story-heart">♥</div>
+            </div>
+
+            <p class="subtle">I didn't know how beautiful the story would become.</p>
+
+            <button class="glow-button" onclick="showPage(3)">
+                Continue <span>♡</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- PAGE 3 -->
+    <div class="page" id="page3">
+        <div class="content">
+            <div class="eyebrow">Chapter 02 · Our memories</div>
+
+            <h1 class="soft-title">And then...<br><em>there was you.</em> ❤️</h1>
+
+            <div class="memory-stage">
+                <div class="memory-light"></div>
+                <div class="mainPhoto">
+                    <div class="photo-shine"></div>
+                    <img id="mainPhoto" src="photos/photo1.jpeg" alt="A special memory">
+                </div>
+                <div class="photo-number">
+                    <span id="memoryCurrent">01</span>
+                    <i></i>
+                    <span>05</span>
+                </div>
+            </div>
+
+            <p class="caption" id="photoCaption">A moment I never want to forget. ❤️</p>
+
+            <button class="glow-button" onclick="nextMemory()">
+                Next memory <span>→</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- PAGE 4 -->
+    <div class="page" id="page4">
+        <div class="content gallery-content">
+            <div class="eyebrow">Chapter 03 · Little moments</div>
+            <h1 class="soft-title">The Beautiful<br><em>memories you gifted me.</em> ✨</h1>
+
+            <p class="subtle">Every picture holds a moment I’ll always cherish.</p>
+
+            <div class="gallery">
+                <button class="gallery-card card-one" onclick="openPhoto('photos/photo2.jpg')">
+                    <img src="photos/photo2.jpeg" alt="Memory 2">
+                    <span>♥</span>
+                </button>
+                <button class="gallery-card card-two" onclick="openPhoto('photos/photo3.jpg')">
+                    <img src="photos/photo3.jpeg" alt="Memory 3">
+                    <span>♥</span>
+                </button>
+                <button class="gallery-card card-three" onclick="openPhoto('photos/photo4.jpg')">
+                    <img src="photos/photo4.jpeg" alt="Memory 4">
+                    <span>♥</span>
+                </button>
+                <button class="gallery-card card-four" onclick="openPhoto('photos/photo5.jpg')">
+                    <img src="photos/photo5.jpeg" alt="Memory 5">
+                    <span>♥</span>
+                </button>
+            </div>
+
+            <button class="glow-button" onclick="showPage(5)">
+                There's more... <span>💌</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- PAGE 5 -->
+    <div class="page" id="page5">
+        <div class="content">
+            <div class="eyebrow">Something from my heart</div>
+
+            <div class="envelope-scene" onclick="openLetter()">
+                <div class="envelope-glow"></div>
+                <div class="envelope">💌</div>
+                <div class="seal">T <span>♥</span></div>
+            </div>
+
+            <h1 class="soft-title">A letter<br><em>for you.</em></h1>
+            <p class="subtle">Tap the envelope. Take your time reading it. ❤️</p>
+
+            <div class="tiny-hint">Made with a lot of love</div>
+        </div>
+    </div>
+
+    <!-- PAGE 6 -->
+    <div class="page" id="page6">
+        <div class="content letter">
+            <div class="eyebrow">Chapter 04 · From my heart</div>
+
+            <div class="letter-paper">
+                <div class="paper-corner">♡</div>
+                <p class="letter-date">16 · 09 · 2026</p>
+
+                <h1>Happy Birthday,<br><em>Tisa</em> 🎂</h1>
+
+                <div class="letter-body">
+                    <p>You came into my life in March 2026, and I never expected that someone could become this special to me in such a short time.</p>
+                    <p>You understand me, you care about me, and you make me feel like I can simply be myself.</p>
+                    <p>Thank you for every conversation, every laugh, every little moment, and for being there.</p>
+                    <p>I hope your birthday brings you everything beautiful that you deserve.</p>
+                </div>
+
+                <div class="signature">
+                    <span>With all my heart,</span>
+                    <strong>Happy Birthday, My Shuttumani ❤️</strong>
+                </div>
+            </div>
+
+            <button class="glow-button" onclick="showPage(7)">
+                One more surprise <span>🎂</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- PAGE 7 -->
+    <div class="page" id="page7">
+        <div class="content cake-content">
+            <div class="eyebrow">The final little ritual</div>
+
+            <h1 class="soft-title">Make a wish,<br><em>birthday girl.</em> ✨</h1>
+
+            <div class="cake">
+                <div class="cake-aura"></div>
+
+                <div class="candles">
+                    <button class="candle" onclick="blowCandle(this)" aria-label="Blow candle">🔥</button>
+                    <button class="candle" onclick="blowCandle(this)" aria-label="Blow candle">🔥</button>
+                    <button class="candle" onclick="blowCandle(this)" aria-label="Blow candle">🔥</button>
+                </div>
+
+                <div class="icing"></div>
+                <div class="cakeBody">🎂</div>
+                <div class="cake-plate"></div>
+            </div>
+
+            <p class="candle-message" id="candleMessage">Tap each candle and make your wish 🕯️</p>
+            <div class="wish-progress"><span id="wishProgress"></span></div>
+        </div>
+    </div>
+
+    <!-- PAGE 8 -->
+    <div class="page" id="page8">
+        <div class="content final">
+            <div class="final-stars">✦　✧　✦</div>
+
+            <div class="bigHeart">♥</div>
+
+            <div class="final-kicker">TODAY IS YOUR DAY</div>
+
+            <h1>
+                HAPPY<br>
+                <span>BIRTHDAY</span>
+            </h1>
+
+            <h2>TISA <span>♡</span></h2>
+
+            <div class="final-date">16 · 09 · 2026</div>
+
+            <div class="finalPhotos">
+                <button onclick="openPhoto('photos/photo1.jpg')"><img src="photos/photos6.jpeg" alt="Tisa memory"></button>
+                <button onclick="openPhoto('photos/photo3.jpg')"><img src="photos/photos7.jpeg" alt="Tisa memory"></button>
+                <button onclick="openPhoto('photos/photo5.jpg')"><img src="photos/photos8.jpeg" alt="Tisa memory"></button>
+            </div>
+
+            <p class="finalText">
+                I'm so grateful that March brought you into my life.
+                <br><strong>May this be only the beginning of many beautiful memories.</strong>
+            </p>
+
+            <div class="forever">♡ Always & Forever ♡</div>
+
+            <button class="replay-button" onclick="restartExperience()">↻ Experience it again</button>
+            <div class="tap-love">Tap anywhere to send love ♥</div>
+        </div>
+    </div>
+
+    <!-- Photo viewer -->
+    <div id="photoViewer" class="photo-viewer" onclick="closePhoto()">
+        <button class="viewer-close" aria-label="Close">×</button>
+        <img id="viewerImage" src="" alt="Expanded memory">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
